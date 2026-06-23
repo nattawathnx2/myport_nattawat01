@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nattawat Port</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0B1120',    /* สีน้ำเงินอมดำหลัก */
+                        darkcard: '#1E293B',  /* สีน้ำเงินอมดำสำหรับ Card */
+                        neon: '#39FF14',      /* สีเขียวนีออน */
+                    },
+                    boxShadow: {
+                        'neon': '0 0 15px rgba(57, 255, 20, 0.4)',
+                        'neon-glow': '0 0 25px rgba(57, 255, 20, 0.7)',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanakit:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', 'Kanakit', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 antialiased selection:bg-neon selection:text-darkbg">
+
+    <!-- ================= NAV BAR ================= -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-darkbg/80 backdrop-blur-md border-b border-neon/10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-xl font-bold text-white tracking-wider">
+                        Nattawat<span class="text-neon text-shadow-neon">Dev.</span>
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#home" class="text-gray-300 hover:text-neon px-3 py-2 text-sm font-medium transition-colors">หน้าแรก</a>
+                        <a href="#about" class="text-gray-300 hover:text-neon px-3 py-2 text-sm font-medium transition-colors">เกี่ยวกับฉัน</a>
+                        <a href="#skills" class="text-gray-300 hover:text-neon px-3 py-2 text-sm font-medium transition-colors">ทักษะ</a>
+                        <a href="#experience" class="text-gray-300 hover:text-neon px-3 py-2 text-sm font-medium transition-colors">ประสบการณ์</a>
+                        <a href="#projects" class="text-gray-300 hover:text-neon px-3 py-2 text-sm font-medium transition-colors">ผลงาน</a>
+                        <a href="#contact" class="text-darkbg bg-neon hover:bg-transparent hover:text-neon border border-neon font-bold px-4 py-2 rounded-full text-sm transition-all shadow-neon">ติดต่อฉัน</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<!-- ================= HERO SECTION (หน้าแรก - เพิ่มรูปภาพฝั่งขวา) ================= -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-24 md:pt-16 relative overflow-hidden">
+        <!-- Background Glow Effect -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-neon/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                
+                <!-- ฝั่งซ้าย: ข้อความ -->
+                <div class="text-center md:text-left order-2 md:order-1">
+                    <p class="text-neon uppercase tracking-widest text-sm font-semibold mb-3">ยินดีต้อนรับสู่เว็บไซต์ของฉัน</p>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        สวัสดี, ฉันคือ <br class="hidden sm:inline md:hidden"><br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-neon to-emerald-400">นัฏฐวัฒน์ อาจเอี่ยม</span>
+                    </h1>
+                    <p class="text-gray-400 text-base sm:text-lg max-w-xl mx-auto md:mx-0 mb-8 leading-relaxed">
+                        Developer ที่สนใจเรื่องการเขียนโค้ดที่มีประสิทธิภาพและสร้างสรรค์ พร้อมที่จะเรียนรู้และเติบโตในสายงานนี้อย่างต่อเนื่อง
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#projects" class="bg-neon text-darkbg font-bold px-6 py-3 rounded-lg shadow-neon hover:scale-105 transition-all text-sm sm:text-base">ดูผลงานของฉัน</a>
+                        <a href="#contact" class="border border-gray-600 hover:border-neon hover:text-neon px-6 py-3 rounded-lg transition-all text-sm sm:text-base">พูดคุยกัน</a>
+                    </div>
+                </div>
+
+                <!-- ฝั่งขวา: รูปภาพจำลอง -->
+                <div class="flex justify-center order-1 md:order-2">
+                    <div class="relative group">
+                        <!-- เอฟเฟกต์แสงเรืองหลังรูป (Neon Glow Background) -->
+                        <div class="absolute inset-0 bg-neon/20 rounded-full blur-xl group-hover:bg-neon/30 transition-all duration-500"></div>
+                        
+                        <!-- กรอบรูปภาพ -->
+                        <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-2 border-neon shadow-neon-glow transition-transform duration-500 group-hover:scale-105 bg-darkcard">
+                            <!-- วิธีแก้ไขรูปภาพ: ให้เปลี่ยน URL ในช่อง src เป็นที่อยู่รูปภาพของคุณ -->
+                            <img src="image/myPhoto1.png.jpg" 
+                                 alt="นัฏฐวัฒน์ อาจเอี่ยม" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT & EDUCATION (เกี่ยวกับฉัน & การศึกษา) ================= -->
+    <section id="about" class="py-24 bg-darkcard/30 border-y border-neon/5">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">
+                เกี่ยวกับฉัน <span class="text-neon">&</span> การศึกษา
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- ข้อมูลส่วนตัว -->
+                <div>
+                    <h3 class="text-xl font-semibold text-neon mb-4">> ประวัติโดยย่อ</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">
+                        ผมเป็นนักศึกษา สาขาคอมพิวเตอร์โปรแกรมเมอร์ กำลังศึกษาอยู่ที่วิทยาลัยเทคนิคอุบลราชธานี มีความมุ่งมั่นในการพัฒนาทักษะการเขียนโปรแกรมอย่างต่อเนื่อง
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        นอกจากศึกษาเชิงวิชาการ ผมยังมีการนำมาประยุกต์ใช้ทำโปรเจคจริงๆ เพื่อพัฒนาและต่อยอดทักษะการเขียนและการแก้ไขข้อผิดพลาด
+                    </p>
+                </div>
+
+                <!-- การศึกษา -->
+                <div class="border-l-2 border-neon/30 pl-6 space-y-6">
+                    <h3 class="text-xl font-semibold text-neon mb-2">> ประวัติการศึกษา</h3>
+                    
+                    <!-- ปริญญาตรี -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-1.5 w-3 h-3 bg-neon rounded-full shadow-neon"></div>
+                        <h4 class="text-lg font-bold text-white">ประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</h4>
+                        <h4 class="text-lg font-bold text-white">สาขาคอมพิวเตอร์โปรแกรมเมอร์</h4>
+                        <p class="text-gray-400 text-sm">วิทยาลัยเทคนิคอุบลราชธานี | พ.ศ. 2568 - 2570</p>
+                        <p class="text-gray-500 text-xs mt-1">กำลังศึกษา</p>
+                    </div>
+
+                    <!-- มัธยม -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-1.5 w-3 h-3 bg-neon rounded-full shadow-neon"></div>
+                        <h4 class="text-lg font-bold text-white">ประกาศนียบัตรวิชาชีพ (ปวช.)</h4>
+                        <h4 class="text-lg font-bold text-white">สาขาเทคนิคคอมพิวเตอร์</h4>
+                        <p class="text-gray-400 text-sm">วิทยาลัยเทคนิคอุบลราชธานี | พ.ศ. 2565 - 2568</p>
+                        <p class="text-gray-500 text-xs mt-1">เกรดเฉลี่ย 3.73</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="skills" class="py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-neon/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+            
+            <h2 class="text-3xl font-bold text-white text-center mb-4" data-th="ทักษะความสามารถ" data-en="Skills & Abilities">ทักษะความสามารถ</h2>
+            <p class="text-center text-gray-500 mb-12 tracking-wide text-sm">Programming Languages & Frameworks</p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center mb-24 skill-animate-container">
+                
+                <div class="p-6 bg-darkcard/60 backdrop-blur-sm rounded-xl border border-gray-800/80 hover:border-orange-500/50 transition-[transform,border-color,box-shadow] duration-200 group relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(249,115,22,0.15)]">
+                    <div class="absolute -inset-full bg-gradient-to-tr from-orange-500/0 via-orange-500/5 to-orange-500/0 group-hover:animate-pulse duration-700"></div>
+                    <i class="fab fa-html5 text-4xl text-orange-500 mb-3 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(249,115,22,0.7)] transition-transform duration-200"></i>
+                    <p class="text-white font-semibold">HTML</p>
+                    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-gray-900">
+                        <div class="bg-orange-500 h-full w-[90%] sm:w-0 group-hover:w-[90%] transition-[width] duration-500 ease-out shadow-[0_0_8px_#f97316]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-darkcard/60 backdrop-blur-sm rounded-xl border border-gray-800/80 hover:border-blue-500/50 transition-[transform,border-color,box-shadow] duration-200 group relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(59,130,246,0.15)]">
+                    <div class="absolute -inset-full bg-gradient-to-tr from-blue-500/0 via-blue-500/5 to-blue-500/0 group-hover:animate-pulse duration-700"></div>
+                    <i class="fab fa-css3-alt text-4xl text-blue-500 mb-3 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(59,130,246,0.7)] transition-transform duration-200"></i>
+                    <p class="text-white font-semibold">CSS</p>
+                    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-gray-900">
+                        <div class="bg-blue-500 h-full w-[85%] sm:w-0 group-hover:w-[85%] transition-[width] duration-500 ease-out shadow-[0_0_8px_#3b82f6]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-darkcard/60 backdrop-blur-sm rounded-xl border border-gray-800/80 hover:border-yellow-400/50 transition-[transform,border-color,box-shadow] duration-200 group relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(250,204,21,0.15)]">
+                    <div class="absolute -inset-full bg-gradient-to-tr from-yellow-400/0 via-yellow-400/5 to-yellow-400/0 group-hover:animate-pulse duration-700"></div>
+                    <i class="fab fa-js text-4xl text-yellow-400 mb-3 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(250,204,21,0.7)] transition-transform duration-200"></i>
+                    <p class="text-white font-semibold">JavaScript</p>
+                    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-gray-900">
+                        <div class="bg-yellow-400 h-full w-[80%] sm:w-0 group-hover:w-[80%] transition-[width] duration-500 ease-out shadow-[0_0_8px_#facc15]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-darkcard/60 backdrop-blur-sm rounded-xl border border-gray-800/80 hover:border-green-500/50 transition-[transform,border-color,box-shadow] duration-200 group relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(34,197,94,0.15)]">
+                    <div class="absolute -inset-full bg-gradient-to-tr from-green-500/0 via-green-500/5 to-green-500/0 group-hover:animate-pulse duration-700"></div>
+                    <i class="fab fa-node-js text-4xl text-green-500 mb-3 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(34,197,94,0.7)] transition-transform duration-200"></i>
+                    <p class="text-white font-semibold">NodeJS</p>
+                    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-gray-900">
+                        <div class="bg-green-500 h-full w-[70%] sm:w-0 group-hover:w-[70%] transition-[width] duration-500 ease-out shadow-[0_0_8px_#22c55e]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-darkcard/60 backdrop-blur-sm rounded-xl border border-gray-800/80 hover:border-yellow-500/50 transition-[transform,border-color,box-shadow] duration-200 group relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(234,179,8,0.15)]">
+                    <div class="absolute -inset-full bg-gradient-to-tr from-yellow-500/0 via-yellow-500/5 to-yellow-500/0 group-hover:animate-pulse duration-700"></div>
+                    <i class="fab fa-python text-4xl text-yellow-500 mb-3 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(234,179,8,0.7)] transition-transform duration-200"></i>
+                    <p class="text-white font-semibold">Python</p>
+                    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-gray-900">
+                        <div class="bg-yellow-500 h-full w-[75%] sm:w-0 group-hover:w-[75%] transition-[width] duration-500 ease-out shadow-[0_0_8px_#eab308]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-darkcard/60 backdrop-blur-sm rounded-xl border border-gray-800/80 hover:border-red-500/50 transition-[transform,border-color,box-shadow] duration-200 group relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(239,68,68,0.15)]">
+                    <div class="absolute -inset-full bg-gradient-to-tr from-red-500/0 via-red-500/5 to-red-500/0 group-hover:animate-pulse duration-700"></div>
+                    <i class="fab fa-java text-4xl text-red-500 mb-3 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(239,68,68,0.7)] transition-transform duration-200"></i>
+                    <p class="text-white font-semibold">Java</p>
+                    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-gray-900">
+                        <div class="bg-red-500 h-full w-[65%] sm:w-0 group-hover:w-[65%] transition-[width] duration-500 ease-out shadow-[0_0_8px_#ef4444]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-darkcard/60 backdrop-blur-sm rounded-xl border border-gray-800/80 hover:border-blue-400/50 transition-[transform,border-color,box-shadow] duration-200 group relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(96,165,250,0.15)]">
+                    <div class="absolute -inset-full bg-gradient-to-tr from-blue-400/0 via-blue-400/5 to-blue-400/0 group-hover:animate-pulse duration-700"></div>
+                    <div class="flex justify-center space-x-2 text-4xl text-blue-400 mb-3 group-hover:scale-110 group-hover:[text-shadow:_0_0_12px_rgba(96,165,250,0.6)] transition-transform duration-200">
+                        <span class="font-bold text-3xl">C++</span>
+                    </div>
+                    <p class="text-white font-semibold">C / C++</p>
+                    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-gray-900">
+                        <div class="bg-blue-400 h-full w-[70%] sm:w-0 group-hover:w-[70%] transition-[width] duration-500 ease-out shadow-[0_0_8px_#60a5fa]"></div>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-darkcard/60 backdrop-blur-sm rounded-xl border border-gray-800/80 hover:border-cyan-400/50 transition-[transform,border-color,box-shadow] duration-200 group relative overflow-hidden transform hover:-translate-y-1 hover:shadow-[0_10px_25px_rgba(34,211,238,0.15)]">
+                    <div class="absolute -inset-full bg-gradient-to-tr from-cyan-400/0 via-cyan-400/5 to-cyan-400/0 group-hover:animate-pulse duration-700"></div>
+                    <i class="fas fa-bullseye text-4xl text-cyan-400 mb-3 group-hover:scale-110 group-hover:drop-shadow-[0_0_12px_rgba(34,211,238,0.7)] transition-transform duration-200"></i>
+                    <p class="text-white font-semibold">Dart</p>
+                    <div class="absolute bottom-0 left-0 w-full h-[3px] bg-gray-900">
+                        <div class="bg-cyan-400 h-full w-[60%] sm:w-0 group-hover:w-[60%] transition-[width] duration-500 ease-out shadow-[0_0_8px_#22d3ee]"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3 class="text-2xl font-bold text-white text-center mb-4" data-th="เครื่องมือที่สามารถใช้งานได้ดี" data-en="Daily Development Tools">เครื่องมือที่สามารถใช้งานได้ดี</h3>
+            <p class="text-center text-gray-500 mb-12 text-sm">Development Tools & Ecosystems</p>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center tool-animate-container">
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-blue-500/40 transition-[transform,border-color,box-shadow] duration-200 group hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(59,130,246,0.15)]">
+                    <i class="fas fa-code text-3xl text-blue-500 mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_#3b82f6] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">VS Code</p>
+                </div>
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-sky-400/40 transition-[transform,border-color,box-shadow] duration-200 group hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(56,189,248,0.15)]">
+                    <i class="fas fa-wand-magic-sparkles text-3xl text-sky-400 mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_#38bdf8] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">Cursor AI</p>
+                </div>
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-purple-400/40 transition-[transform,border-color,box-shadow] duration-200 group hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(192,132,252,0.15)]">
+                    <i class="fab fa-figma text-3xl text-purple-400 mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_#c084fc] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">Figma</p>
+                </div>
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-blue-600/40 transition-[transform,border-color,box-shadow] duration-200 group hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(37,99,235,0.15)]">
+                    <i class="fas fa-desktop text-3xl text-blue-600 mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_#2563eb] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">Dev-C++</p>
+                </div>
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-orange-400/40 transition-[transform,border-color,box-shadow] duration-200 group hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(251,146,60,0.15)]">
+                    <i class="fas fa-cubes text-3xl text-orange-400 mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_#fb923c] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">NetBeans</p>
+                </div>
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-orange-500/40 transition-[transform,border-color,box-shadow] duration-200 group hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(249,115,22,0.15)]">
+                    <i class="fas fa-server text-3xl text-orange-500 mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_#f97316] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">XAMPP</p>
+                </div>
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-emerald-400/40 transition-[transform,border-color,box-shadow] duration-200 group hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(52,211,153,0.15)]">
+                    <i class="fas fa-database text-3xl text-emerald-400 mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_#34d399] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">Supabase</p>
+                </div>
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-teal-400/40 transition-[transform,border-color,box-shadow] duration-200 group hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(45,212,191,0.15)]">
+                    <i class="fas fa-microchip text-3xl text-teal-400 mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_#2dd4bf] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">Arduino IDE</p>
+                </div>
+                
+                <div class="p-5 bg-darkcard/50 rounded-xl border border-gray-800/60 hover:border-white/30 transition-[transform,border-color,box-shadow] duration-200 group col-span-2 sm:col-span-3 md:col-span-4 max-w-xs mx-auto w-full hover:-translate-y-1 hover:shadow-[0_8px_20px_rgba(255,255,255,0.12)]">
+                    <i class="fab fa-github text-3xl text-white mb-2 group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-transform duration-200"></i>
+                    <p class="text-white font-medium text-sm">GitHub</p>
+                </div>
+            </div>  
+        </div>
+    </section>
+
+    <script>
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = entry.target.children;
+                    Array.from(cards).forEach((card, index) => {
+                        // ใช้ setTimeout แทนการอิงเมาส์เพื่อให้เกิด Stagger ตอนโหลดเท่านั้น หลังจากนั้นจะปล่อยให้ CSS ปกติทำงาน
+                        setTimeout(() => {
+                            card.classList.remove('opacity-0', 'translate-y-6');
+                        }, index * 50);
+                    });
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-animate-container, .tool-animate-container').forEach(container => {
+            Array.from(container.children).forEach(card => {
+                // ย้ายคุณสมบัติการ Transition ขาเข้ามาใส่ใน class ฝั่งเริ่มต้น เพื่อไม่ให้ตีกับ Transition ตอน hover เมาส์
+                card.classList.add('opacity-0', 'translate-y-6', 'transition-all', 'duration-500', 'ease-out');
+                
+                // หลังจากทำอนิเมชันขาเข้าเสร็จ ให้เอา transition-all ออกเพื่อความลื่นตอน hover
+                card.addEventListener('transitionend', function handleTEnd() {
+                    card.classList.remove('transition-all', 'duration-500', 'ease-out');
+                    card.removeEventListener('transitionend', handleTEnd);
+                });
+            });
+            skillObserver.observe(container);
+        });
+    </script>
+
+    <!-- ================= EXPERIENCE (ประสบการณ์) ================= -->
+    <section id="experience" class="py-24 bg-darkcard/30 border-y border-neon/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl font-bold text-white text-center mb-16">ประสบการณ์ด้านวิชาการและลงมือปฏิบัติ</h2>
+            
+            <div class="space-y-12 border-l border-gray-800 ml-4 md:ml-32">
+                <!-- Job 1 -->
+                <div class="relative pl-8 md:pl-12">
+                    <!-- Date Badge (Desktop) -->
+                    <div class="hidden md:block absolute -left-36 text-sm text-neon font-semibold pt-1">2026 - ปัจจุบัน</div>
+                    <!-- Timeline dot -->
+                    <div class="absolute -left-[5px] top-1.5 w-2 h-2 bg-neon rounded-full"></div>
+                    
+                    <span class="md:hidden text-xs text-neon font-semibold block mb-1">2026 - ปัจจุบัน</span>
+                    <h3 class="text-xl font-bold text-white">Java Developer</h3>
+                    <p class="text-gray-400 font-medium text-sm mb-3">Ubonratchathani Technical Collage</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                        <li>พัฒนาระบบจำลองการทำธุรกรรมการเงิน Object-Oriented Programming</li>
+                        <li>แก้ไขข้อผิดพลาดของ Logic การคำนวณเงินและการเรียกใช้ข้อมูล</li>
+                        <li>ปรับปรุงประสิทธิภาพความเร็วของระบบ</li>
+                    </ul>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div class="hidden md:block absolute -left-36 text-sm text-gray-500 font-semibold pt-1">2025 - 2026</div>
+                    <div class="absolute -left-[5px] top-1.5 w-2 h-2 bg-gray-600 rounded-full"></div>
+                    
+                    <span class="md:hidden text-xs text-gray-500 font-semibold block mb-1">2025 - 2026</span>
+                    <h3 class="text-xl font-bold text-white">Back-End Developer (Intern)</h3>
+                    <p class="text-gray-400 font-medium text-sm mb-3">Ubonratchathani Technical Collage</p>
+                    <ul class="list-disc list-inside text-gray-400 space-y-2 text-sm">
+                        <li>ช้วยทีมทำและพัฒนาระบบหลังบ้าน (Back-End) ของระบบประมูลสินค้าการ์ดเกม เป็นโปรเจคจบ</li>
+                        <li>เขียนเอกสารอธิบายการทำงานและการออกแบบโครงสร้าง Flowchart และฐานข้อมูล</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="projects" class="py-16"> <div class="max-w-5xl mx-auto px-4 sm:px-6"> <h2 class="text-2xl font-bold text-white text-center mb-10">ผลงานและการพัฒนาของฉัน</h2> <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            
+            <div class="bg-darkcard rounded-xl overflow-hidden border border-gray-800 hover:border-neon/50 transition-all duration-300 transform hover:-translate-y-1 group shadow-lg">
+                <div class="relative aspect-[21/9] w-full overflow-hidden bg-gray-900">
+                    <img src="image/photo1.png.png" 
+                         alt="Card Game Auction Platform Preview" 
+                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkcard via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div class="p-5"> <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Graduation Project</span>
+                    <h3 class="text-base font-bold text-white mb-1.5 mt-0.5 group-hover:text-neon transition-colors">Card Game Auction Platform</h3>
+                    <p class="text-gray-400 text-xs mb-3 leading-relaxed">
+                        ระบบประมูลสินค้าและของสะสมประเภทการ์ดเกม พัฒนาขึ้นเพื่อจัดการระบบเสนอราคา (Bidding) ตรวจสอบผู้ชนะอัตโนมัติเมื่อหมดเวลา และป้องกันการทุจริตในการซื้อขาย
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                        <span class="text-[10px] bg-darkbg text-neon px-2 py-0.5 rounded border border-neon/20">PHP</span>
+                        <span class="text-[10px] bg-darkbg text-neon px-2 py-0.5 rounded border border-neon/20">Web Socket</span>
+                        <span class="text-[10px] bg-darkbg text-neon px-2 py-0.5 rounded border border-neon/20">NodeJS</span>
+                        <span class="text-[10px] bg-darkbg text-neon px-2 py-0.5 rounded border border-neon/20">MySQL</span>
+                    </div>
+                    <a href="https://github.com/nattawathnx2" target="_blank" class="text-xs text-neon font-semibold inline-flex items-center group/link">
+                        ดูรายละเอียดโค้ดบน GitHub 
+                        <i class="fas fa-arrow-right ml-1 text-[10px] transform group-hover/link:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-darkcard rounded-xl overflow-hidden border border-gray-800 hover:border-neon/50 transition-all duration-300 transform hover:-translate-y-1 group shadow-lg">
+                <div class="relative aspect-[21/9] w-full overflow-hidden bg-gray-900">
+                    <img src="image/photo2.png.png" 
+                         alt="Banking Simulator Console Log Preview" 
+                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkcard via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div class="p-5"> <span class="text-[10px] font-bold text-accent uppercase tracking-wider">Side Project / Academic</span>
+                    <h3 class="text-base font-bold text-white mb-1.5 mt-0.5 group-hover:text-neon transition-colors">Banking Simulator (Java OOP)</h3>
+                    <p class="text-gray-400 text-xs mb-3 leading-relaxed">
+                        ระบบบริหารจัดการบัญชีธนาคารจำลองหลังบ้าน รองรับโครงสร้างประเภทบัญชีที่หลากหลาย ระบบล็อกความปลอดภัยรหัสผ่าน (PassLock) และระบบบันทึกประวัติธุรกรรมย้อนหลังแบบอัตโนมัติ
+                    </p>
+                    <div class="flex flex-wrap gap-1.5 mb-4">
+                        <span class="text-[10px] bg-darkbg text-neon px-2 py-0.5 rounded border border-neon/20">Java</span>
+                        <span class="text-[10px] bg-darkbg text-neon px-2 py-0.5 rounded border border-neon/20">OOP</span>
+                    </div>
+                    <a href="https://github.com/nattawathnx2" target="_blank" class="text-xs text-neon font-semibold inline-flex items-center group/link">
+                        ดูรายละเอียดโค้ดบน GitHub 
+                        <i class="fas fa-arrow-right ml-1 text-[10px] transform group-hover/link:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- ================= CONTACT (ติดต่อ) ================= -->
+    <section id="contact" class="py-24 bg-darkcard/30 border-t border-neon/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">เริ่มต้นสร้างสรรค์ผลงานร่วมกัน</h2>
+            <p class="text-gray-400 max-w-md mx-auto mb-10">
+                สนใจติดต่อสอบถามรายละเอียดต่างๆ หรือต้องการพูดคุยแลกเปลี่ยน สามารถติดต่อผมได้ตามช่องทางด้านล่างนี้เลยครับ
+            </p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+    <div class="p-5 bg-darkbg border border-gray-800 rounded-xl transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-neon/40 hover:shadow-[0_8px_20px_rgba(0,242,254,0.1)] group">
+        <i class="fas fa-envelope text-neon text-xl mb-2 transition-transform duration-200 group-hover:scale-110"></i>
+        <p class="text-xs text-gray-500 uppercase tracking-wider">อีเมล</p>
+        <p class="text-xs md:text-sm font-semibold text-white mt-1 whitespace-nowrap overflow-x-auto scrollbar-none">nattawathnx2@email.com</p>
+    </div>
+
+    <div class="p-5 bg-darkbg border border-gray-800 rounded-xl transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-neon/40 hover:shadow-[0_8px_20px_rgba(0,242,254,0.1)] group">
+        <i class="fas fa-phone text-neon text-xl mb-2 transition-transform duration-200 group-hover:scale-110"></i>
+        <p class="text-xs text-gray-500 uppercase tracking-wider">เบอร์โทรศัพท์</p>
+        <p class="text-xs md:text-sm font-semibold text-white mt-1">092-984-8032</p>
+    </div>
+
+    <div class="p-5 bg-darkbg border border-gray-800 rounded-xl transition-[transform,border-color,box-shadow] duration-200 hover:-translate-y-1 hover:border-neon/40 hover:shadow-[0_8px_20px_rgba(0,242,254,0.1)] group">
+        <i class="fas fa-map-marker-alt text-neon text-xl mb-2 transition-transform duration-200 group-hover:scale-110"></i>
+        <p class="text-xs text-gray-500 uppercase tracking-wider">ที่อยู่</p>
+        <p class="text-xs md:text-sm font-semibold text-white mt-1">อุบลราชธานี, ประเทศไทย</p>
+    </div>
+</div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-8 text-3xl text-gray-500">
+                <a href="https://github.com/nattawathnx2" target="_blank" rel="noopener noreferrer" 
+                class="transform transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-115 hover:text-white hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]">
+                    <i class="fab fa-github"></i>
+                </a>
+    
+                <a href="https://www.facebook.com/nattawat.dev2007" target="_blank" rel="noopener noreferrer" 
+                class="transform transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-115 hover:text-[#1877F2] hover:drop-shadow-[0_0_10px_rgba(24,119,242,0.6)]">
+                    <i class="fab fa-facebook"></i>
+                </a>
+    
+                <a href="https://www.instagram.com/jumonqdev_/" target="_blank" rel="noopener noreferrer" 
+                class="transform transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-115 hover:text-[#E1306C] hover:drop-shadow-[0_0_10px_rgba(225,48,108,0.6)]">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-darkbg py-6 border-t border-gray-900 text-center text-xs text-gray-600">
+        <p>&copy; 2026 nattawat portfolio</p>
+    </footer>
+
+</body>
+</html>
